@@ -1,7 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: shadrovsky
- * Date: 27.05.2016
- * Time: 12:02
- */
+    function db_connect() {
+        mysql_connect('localhost', 'root', '') or die('No connection with database');
+        mysql_select_db('posts') or die('No database');
+    }
