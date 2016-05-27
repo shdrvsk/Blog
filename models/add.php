@@ -1,7 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: shadrovsky
- * Date: 27.05.2016
- * Time: 12:01
- */
+    function add_article($topic, $text) {
+        $dt = date('d:m:y');
+        db_query('INSERT INTO posts (dt, topic, text) VALUES ("$dt", "$topic", "$text")');
+    }
