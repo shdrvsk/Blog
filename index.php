@@ -6,7 +6,10 @@
     require_once __DIR__ . '/models/article.php';
     require_once __DIR__ . '/models/articles.php';
 
+    session_start();
     db_connect();
-    add_article('Topic 1', 'Hello, my friends!');
     $articles = get_articles();
     include __DIR__ . '/views/articles.php';
+
+    if(isset($_GET['id']))
+        header('Location: article.php?id=' . $_GET['id']);
