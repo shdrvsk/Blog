@@ -1,7 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: shadrovsky
- * Date: 27.05.2016
- * Time: 12:01
- */
+    function get_article($id) {
+        return db_query('SELECT * FROM posts WHERE id="$id"');
+    }
