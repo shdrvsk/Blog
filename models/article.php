@@ -1,7 +1,12 @@
 <?php
-    require_once __DIR__ . '/db.php';
-    function get_article($id) {
-        $resource = db_query("SELECT * FROM posts WHERE id='$id'");
-        $row = mysql_fetch_assoc($resource);
-        return $row;
+class Article {
+    public $topic;
+    public $text;
+    public $dt;
+
+    public function __construct($topic, $text) {
+        $this->topic = $topic;
+        $this->text = $text;
+        $this->dt = date('d:m:y');
     }
+}
