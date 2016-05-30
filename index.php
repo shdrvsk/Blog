@@ -1,15 +1,23 @@
 <?php
-    require_once __DIR__ . '/models/db.php';
-    require_once __DIR__ . '/models/add.php';
-    require_once __DIR__ . '/models/delete.php';
-    require_once __DIR__ . '/models/edit.php';
-    require_once __DIR__ . '/models/article.php';
-    require_once __DIR__ . '/models/articles.php';
+require_once __DIR__ . '/models/db.php';
+require_once __DIR__ . '/models/article.php';
 
-    session_start();
-    db_connect();
-    $articles = get_articles();
-    include __DIR__ . '/views/articles.php';
+session_start();
+setlocale('LC_ALL', 'ru_RU.CP1251');
 
-    if(isset($_GET['id']))
-        header('Location: article.php?id=' . $_GET['id']);
+$db = new Database();
+
+if(isset($_GET['id']))
+    header('Location: article.php?id=' . $_GET['id']);
+
+//$article1 = new Article('Article 1', 'Text 1');
+//$db->add($article1->dt, $article1->topic, $article1->text);
+$db->edit(56, 'New Topic 1', 'New Text 1');
+
+$articles = $db->get();
+include __DIR__ . '/views/articles.php';
+
+
+
+
+
