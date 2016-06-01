@@ -1,8 +1,8 @@
 <html>
-    <?php foreach($articles as $article):?>
-        <h1><?=$article['topic']?></h1>
-        <i><?=$article['dt']?></i>
-        <p><?=$article['text']?></p>
-        <a href=<?="index.php?id={$article['id']}"?>>More...</a>
+    <?php foreach($posts as $post):?>
+        <h1><?=$post->topic?></h1>
+        <i><?=$post->dt?></i>
+        <p><?=$post->text?></p>
+        <a href=<?="index.php?id=$post->id"?>>More...</a>
     <?php endforeach ?>
 </html>

@@ -1,6 +1,4 @@
-<html>
-    <h1><?=$article['topic']?></h1>
-    <i><?=$article['dt']?></i>
-    <p><?=$article['text']?></p>
-    <a href=<?="post.php?del_id={$article['id']}"?>>Delete post</a>
-</html>
+<h1><?=$post->topic?></h1>
+<i><?=$post->dt?></i>
+<p><?=$post->text?></p>
+<a href=<?="post.php?del_id={$post->id}"?>>Delete post</a>
